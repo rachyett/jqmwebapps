@@ -1,0 +1,72 @@
+not working
+https://farm6.staticflickr.com/5723/21986318331_4f411e4e
+https://farm6.staticflickr.com/5723/21986318331_4f411e4e_q.jpg
+
+working
+https://farm6.staticflickr.com/5668/23281620269_6d694580e6_q_d.jpg
+https://farm6.staticflickr.com/5723/21986318331_4f411e4e
+
+
+https://farm1.staticflickr.com/471/19331583790_5eea086685_m.jpg
+https://farm6.staticflickr.com/5723/21986318331_4f411e4e
+
+
+<div data-theme="b" data-role="header"><a href="#" class="ui-btn-left ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-home">Home</a><a href="#" class="ui-btn-right ui-btn ui-btn-inline ui-mini ui-corner-all ui-btn-icon-left ui-icon-info">Info</a></div>  <!-- header -->
+
+
+<div data-theme="b" data-role="footer" data-position="fixed">
+<nav data-role="navbar">
+<ul>
+	<li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-top">Home</a></li>
+	<li><a href="#blog" class="ui-btn ui-icon-edit ui-btn-icon-top">Blog</a></li>
+	<li><a href="#videos" class="ui-btn ui-icon-video ui-btn-icon-top">Videos</a></li>
+	<li><a href="#photos" class="ui-btn ui-icon-camera ui-btn-icon-top">Photos</a></li>
+	<li><a href="#tweets" class="ui-btn ui-icon-comment ui-btn-icon-top">Tweets</a></li>
+</ul>
+</nav>
+</div>  <!-- footer -->
+
+http://seenewcastle.com/api?json=get_post&post_id=3776&callback=?
+
+http://www.seenewcastle.com/api/category/church/?json=1&count=10
+
+http://seenewcastle.com/api/?json=get_post&post_id=3776&callback=?  no
+http://seenewcastle.com/?json=get_post&post_id=3776&callback=? no
+
+
+
+http://www.seenewcastle.com/api/get_post?post_id=3776&callback=?  yes
+
+http://www.seenewcastle.com/api/get_post?post_id=3776  yes
+
+http://www.seenewcastle.com/api/?json=get_post&post_id=3776   YES
+
+http://www.seenewcastle.com/api/?json=get_post&post_id=3776&callback=?
+
+https://farm6.staticflickr.com/5723/21986318331_4f411e4e84_m.jpg
+
+https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUOQHVnDtIgfFYQcMG9uETGw&key=AIzaSyBj9H_YSTEnuhHQKLFWWvtb1SkIHUSZOhI
+
+
+
+
+function listVideos(data){
+	console.log(data);
+
+	var output = '';
+	for (var i=0; i<data.feed.entry.length; i++){
+		var title = data.feed.entry[i].title.$t
+		var thumbnail = data.feed.entry[i].media$group.mediat$thumbnail[0].url;
+		var description = data.feed.entry[i].media$group.mediat$description.$t;
+		// var id = data.feed.entry[i].id.$t;
+		// id = id.replace(/\_m.jpg$/, '');
+		var id = data.feed.entry[i].id.$t.substring(38);
+		var blocktype = ((i % 2)===1) ? 'b': 'a';
+
+		output += '<div class="ui-block-' + blocktype + '">';
+		output += '<div';
+
+	} //  entries loop
+ $('#videolist').html(output);
+
+} // listVideos

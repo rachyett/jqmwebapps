@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> JQuery Mobile Web App
+</title>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/jquerymobile.js"></script>
+
+<!-- stylesheets -->
+<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+</head>
+<body>
+
+<!-- page home -->
+<section data-role="page" id="home">
+<article data-role="content">
+<img src="images\viewsourcelogo.png" alt="Some alt text">
+
+<div data-role="controlgroup">
+<a href="#blog" class="ui-btn ui-icon-edit ui-btn-icon-left ui-corner-all ui-btn-b">Blog</a>
+<a href="#videos" class="ui-btn ui-icon-video ui-btn-icon-left ui-corner-all ui-btn-b">Videos</a>
+<a href="#photos" class="ui-btn ui-icon-camera ui-btn-icon-left ui-corner-all ui-btn-b">Photos</a>
+<a href="#tweets" class="ui-btn ui-icon-comment ui-btn-icon-left ui-corner-all ui-btn-b">Tweets</a>
+</div>
+</article> <!-- content -->
+</section> <!-- home -->
+
+<!-- page blog -->
+<section id="blog" class="header_default footer_default" data-role="page" data-title="Blog">
+<div data-role="content" id="postlist">
+</div> <!-- content -->
+</section> <!--blog page -->
+
+<!-- page blog posts-->
+<section data-role="page" id="blogpost" data-title="Posts">
+	<div data-role="content">
+		<div id="mypost"></div>
+	</div>	<!-- content -->
+</section>   <!-- blogposts page -->
+
+<!-- page videos -->
+<section data-role="page" id="videos" data-title="Videos" class="header_default footer_default">
+	<div data-role="content">
+		<div class="ui-grid-a" id="videolist"> </div>
+	</div> <!-- content -->
+</section> <!-- videos page -->
+
+<section id="videoplayer" data-role="page" data-title="Player" class="header_default footer_default">
+<div data-role="content">
+		<div id="myPlayer"> </div>
+	</div> <!-- content -->
+ </section> <!-- videoplayer page -->
+
+<!-- page photos -->
+<section data-role="page" id="photos" data-title="Photo Grid" class="header_default footer_default">
+	<div data-role="content">
+		<div class="ui-grid-c" id="photolist"> </div>
+	</div> <!-- content -->
+</section> <!-- photos page -->
+
+<!-- show photo -->
+<section data-role="page" id="showphoto" class="header_default footer_default" data-title="Photo">
+	<div data-role="content">
+		<div class="ui-grid-c" id="myphoto"> </div>
+	</div> <!-- content -->
+</section> <!-- show photo page -->
+
+<!-- show tweets -->
+<section data-role="page" id="tweets" class="header_default footer_default" data-title="Tweets">
+	<div data-role="content" id="tweetlist">
+	</div> <!-- content -->
+</section> <!-- show tweets page -->
+
+
+
+<section id='mydialog' data-role="dialog" >
+<header data-role="header"><h1>More Info</h1></header>
+	<div data-role="content">
+<h1>About SeeNewcastle</h1>
+<p>See Newcastle is a tribute to the fine city of Newcastle Upon Tyne.  For more information visit <a href="http://seenewcastle.com"> seenewcastle.com</a> </p>
+	</div>
+	</section>
+
+
+<script src="js/script.js"></script>
+<script src="http://www.seenewcastle.com/api/category/church/?json=1&count=10&callback=listPosts"></script>
+<!-- <script src="http://gdata.youtube.com/feeds/users/rachyett/uploads?alt=json&maxresults=30&callback=listVideos"></script> -->
+<script src="https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=UUOQHVnDtIgfFYQcMG9uETGw&key=AIzaSyBj9H_YSTEnuhHQKLFWWvtb1SkIHUSZOhI&callback=listVideos"></script>
+
+<script src="https://api.flickr.com/services/feeds/photos_public.gne?id=128767365@N04&format=json&tags=n365"></script>
+<script src="http://seenewcastle.com/blog/tweets_json.php?count=30&callback=listTweets"></script>
+
+</body>
+</html>
